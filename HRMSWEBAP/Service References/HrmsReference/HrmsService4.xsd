@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DemoService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DemoService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpDesig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmpID" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Flag" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImgData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pinflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Poutflg" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PunchinTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PunchoutTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pwd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectedDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPhotoPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Utype" type="xs:int" />
+      <xs:element minOccurs="0" name="userRole" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:complexType name="ArrayOfUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfo" nillable="true" type="tns:ArrayOfUserInfo" />
+  <xs:complexType name="ArrayOfHrmsQueryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HrmsQueryInfo" nillable="true" type="tns:HrmsQueryInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHrmsQueryInfo" nillable="true" type="tns:ArrayOfHrmsQueryInfo" />
+  <xs:complexType name="HrmsQueryInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRead" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QueryBody" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QuerySubject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderEmail" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HrmsQueryInfo" nillable="true" type="tns:HrmsQueryInfo" />
+  <xs:complexType name="CRUDStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NoofRecords" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CRUDStatus" nillable="true" type="tns:CRUDStatus" />
+  <xs:complexType name="ArrayOfCRUDStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CRUDStatus" nillable="true" type="tns:CRUDStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCRUDStatus" nillable="true" type="tns:ArrayOfCRUDStatus" />
+  <xs:complexType name="ArrayOfLeaveInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeaveInfo" nillable="true" type="tns:LeaveInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeaveInfo" nillable="true" type="tns:ArrayOfLeaveInfo" />
+  <xs:complexType name="LeaveInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cancelled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CasualLeave" type="xs:double" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Days" type="xs:double" />
+      <xs:element minOccurs="0" name="EmpId" type="xs:int" />
+      <xs:element minOccurs="0" name="FestiveLeave" type="xs:double" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeaveStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeaveType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LeaveTypeInt" type="xs:int" />
+      <xs:element minOccurs="0" name="LeaveTypes" nillable="true" type="tns:ArrayOfLeaveType" />
+      <xs:element minOccurs="0" name="LeavedurTypInt" type="xs:int" />
+      <xs:element minOccurs="0" name="Leavedurationtype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LossOfPay" type="xs:double" />
+      <xs:element minOccurs="0" name="LvId" type="xs:int" />
+      <xs:element minOccurs="0" name="Rejected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SickLeave" type="xs:double" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeaveInfo" nillable="true" type="tns:LeaveInfo" />
+  <xs:complexType name="ArrayOfLeaveType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeaveType" nillable="true" type="tns:LeaveType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeaveType" nillable="true" type="tns:ArrayOfLeaveType" />
+  <xs:complexType name="LeaveType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeaveType" nillable="true" type="tns:LeaveType" />
+  <xs:complexType name="ImageFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Imagestream" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImageFile" nillable="true" type="tns:ImageFile" />
+</xs:schema>

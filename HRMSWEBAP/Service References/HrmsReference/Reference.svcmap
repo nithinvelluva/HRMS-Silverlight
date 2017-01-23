@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="678b18c3-344a-4115-96f3-36b52c49dd1c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51532/HrmsService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HrmsService4.xsd" MetadataType="Schema" ID="4bd93e6e-c574-424e-8db3-939cad6748b0" SourceId="1" SourceUrl="http://localhost:51532/HrmsService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HrmsService1.disco" MetadataType="Disco" ID="e0677a19-b331-4555-9acb-e0438e67e39d" SourceId="1" SourceUrl="http://localhost:51532/HrmsService.svc?disco" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="bb1977a8-b2b1-424f-a4e3-6b99efe6d03d" SourceId="1" SourceUrl="http://localhost:51532/HrmsService.svc?wsdl" />
+    <MetadataFile FileName="HrmsService41.xsd" MetadataType="Schema" ID="0833d4dd-3edd-431f-9f02-471c723a38a2" SourceId="1" SourceUrl="http://localhost:51532/HrmsService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HrmsService42.xsd" MetadataType="Schema" ID="6a69184c-c2f7-4e7f-9588-8a7a0fc57261" SourceId="1" SourceUrl="http://localhost:51532/HrmsService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

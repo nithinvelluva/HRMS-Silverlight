@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:51532/HrmsService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51532/HrmsService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51532/HrmsService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DemoService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHrmsService_GetEmployeeAttendanceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeAttendanceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetEmployeeAttendanceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeAttendanceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetUserData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserData" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetUserData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_InsertHrmsQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertHrmsQuery" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_InsertHrmsQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertHrmsQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_RemoveEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployee" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_RemoveEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_AddAttendance_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttendance" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_AddAttendance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAttendanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetAttendanceDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttendanceDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetAttendanceDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttendanceDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetLeaveStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeaveStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetLeaveStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeaveStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetEmployeeLeaveDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeLeaveDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_GetEmployeeLeaveDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeLeaveDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_AddLeaveDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLeaveDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_AddLeaveDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLeaveDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_EnoughLeaves_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnoughLeaves" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_EnoughLeaves_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnoughLeavesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_Upload_InputMessage">
+    <wsdl:part name="parameters" element="tns:Upload" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_Upload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_UpdateLeaveDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLeaveDetails" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_UpdateLeaveDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLeaveDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_UpdateProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
+  </wsdl:message>
+  <wsdl:message name="IHrmsService_UpdateProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHrmsService">
+    <wsdl:operation name="GetEmployeeAttendanceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/GetEmployeeAttendanceDetails" message="tns:IHrmsService_GetEmployeeAttendanceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/GetEmployeeAttendanceDetailsResponse" message="tns:IHrmsService_GetEmployeeAttendanceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/GetData" message="tns:IHrmsService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/GetDataResponse" message="tns:IHrmsService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/GetUserData" message="tns:IHrmsService_GetUserData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/GetUserDataResponse" message="tns:IHrmsService_GetUserData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/ValidateUser" message="tns:IHrmsService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/ValidateUserResponse" message="tns:IHrmsService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertHrmsQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/InsertHrmsQuery" message="tns:IHrmsService_InsertHrmsQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/InsertHrmsQueryResponse" message="tns:IHrmsService_InsertHrmsQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/RemoveEmployee" message="tns:IHrmsService_RemoveEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/RemoveEmployeeResponse" message="tns:IHrmsService_RemoveEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAttendance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/AddAttendance" message="tns:IHrmsService_AddAttendance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/AddAttendanceResponse" message="tns:IHrmsService_AddAttendance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/GetAttendanceDetails" message="tns:IHrmsService_GetAttendanceDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/GetAttendanceDetailsResponse" message="tns:IHrmsService_GetAttendanceDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaveStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/GetLeaveStatistics" message="tns:IHrmsService_GetLeaveStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/GetLeaveStatisticsResponse" message="tns:IHrmsService_GetLeaveStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeLeaveDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/GetEmployeeLeaveDetails" message="tns:IHrmsService_GetEmployeeLeaveDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/GetEmployeeLeaveDetailsResponse" message="tns:IHrmsService_GetEmployeeLeaveDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLeaveDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/AddLeaveDetails" message="tns:IHrmsService_AddLeaveDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/AddLeaveDetailsResponse" message="tns:IHrmsService_AddLeaveDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnoughLeaves">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/EnoughLeaves" message="tns:IHrmsService_EnoughLeaves_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/EnoughLeavesResponse" message="tns:IHrmsService_EnoughLeaves_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/Upload" message="tns:IHrmsService_Upload_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/UploadResponse" message="tns:IHrmsService_Upload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLeaveDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/UpdateLeaveDetails" message="tns:IHrmsService_UpdateLeaveDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/UpdateLeaveDetailsResponse" message="tns:IHrmsService_UpdateLeaveDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHrmsService/UpdateProfile" message="tns:IHrmsService_UpdateProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHrmsService/UpdateProfileResponse" message="tns:IHrmsService_UpdateProfile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHrmsService" type="tns:IHrmsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployeeAttendanceDetails">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/GetEmployeeAttendanceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserData">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/GetUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertHrmsQuery">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/InsertHrmsQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveEmployee">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/RemoveEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAttendance">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/AddAttendance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttendanceDetails">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/GetAttendanceDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeaveStatistics">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/GetLeaveStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeLeaveDetails">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/GetEmployeeLeaveDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLeaveDetails">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/AddLeaveDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnoughLeaves">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/EnoughLeaves" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/Upload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLeaveDetails">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/UpdateLeaveDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://tempuri.org/IHrmsService/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IHrmsService" binding="tns:BasicHttpBinding_IHrmsService">
+      <soap:address location="http://localhost:51532/HrmsService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

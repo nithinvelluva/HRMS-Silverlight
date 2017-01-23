@@ -1,0 +1,287 @@
+﻿<navigation:Page xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="HRMSWEBAP.Views.AdminPage" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="AdminPage">
+    <Grid x:Name="LayoutRoot">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <sdk:TabControl>
+                <sdk:TabItem Header="Employees">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" MaxHeight="300"></RowDefinition>
+                            <RowDefinition Height="70"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                            <StackPanel Orientation="Horizontal" Height="30">
+                                <TextBlock Text="Employee ID" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBox x:Name="empidtxt" TextChanged="empidtxt_TextChanged" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                                <TextBlock Text="OR    Employee Name" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBox x:Name="empnametxt" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                                <Button x:Name="searchBtn" Content="Search" Click="searchBtn_Click" Width="75" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <TextBlock x:Name="errortxt" Foreground="Red" Visibility="Visible" FontSize="9" HorizontalAlignment="Left" Text="" Width="90" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                <Image Name="refresh_btn_EmpData" Source="../Icons/refresh.png" MouseLeftButtonDown="refresh_btn_EmpData_MouseLeftButtonDown" Width="50" Height="30" Margin="0,0,0,0" ToolTipService.ToolTip="Refresh"></Image>
+
+                            </StackPanel>
+                            <sdk:DataGrid x:Name="usrgrd" Height="Auto" ItemsSource="{Binding lst}" AutoGenerateColumns="False" Grid.Row="1"
+                               VerticalScrollBarVisibility="Auto"   >
+                                <sdk:DataGrid.Columns>
+                                    <sdk:DataGridTemplateColumn x:Name="IDTemplate" Visibility="Collapsed" Header="ID">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxID" IsReadOnly="True" Visibility="Collapsed" Text="{Binding EmpID}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                    <sdk:DataGridTemplateColumn x:Name="NameTemplate" Header="Name" Width="*">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxName" IsReadOnly="True" Text="{Binding Name}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                    <!--<DataGridTemplateColumn x:Name="PositionTemplate" Header="Designation" Width="*">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox x:Name="TextBoxPos" IsReadOnly="True" Text="{Binding emppos}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+
+                                    <sdk:DataGridTemplateColumn x:Name="NoTemplate" Header="Mobile" Width="*">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxNo" IsReadOnly="True" Text="{Binding Number}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                    <sdk:DataGridTemplateColumn x:Name="MailTemplate" Header="Email" Width="*">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxMail" IsReadOnly="True" Text="{Binding Mail}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                    <sdk:DataGridTemplateColumn x:Name="SexTemplate" Header="Sex" Width="*">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxSex" IsReadOnly="True" Text="{Binding Gender}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                    <sdk:DataGridTemplateColumn x:Name="DobTemplate" Header="DOB" Width="*">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxDob" IsReadOnly="True" Text="{Binding Dob}"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                    <sdk:DataGridTemplateColumn x:Name="NationTemplate" Header="Nationality" Width="*">
+                                        <sdk:DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBox x:Name="TextBoxNation" IsReadOnly="True" Text="INDIAN"/>
+                                            </DataTemplate>
+                                        </sdk:DataGridTemplateColumn.CellTemplate>
+                                    </sdk:DataGridTemplateColumn>
+
+                                </sdk:DataGrid.Columns>
+                            </sdk:DataGrid>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center">
+                            <!--<Button x:Name="okbtn" Content="Employees" Click="okbtn_Click" Width="85" Height="25"/>-->
+                            <Button x:Name="getattendancebtn" Content="Get Report" Click="btnrprt_Click" Width="95" Height="25" Margin="10,0,0,0"/>
+                            <Button x:Name="lvdtlsbtn" Content="Leave Report" Click="lvdtlsbtn_Click" Width="95" Height="25" Margin="10,0,0,0"/>
+                            <Button x:Name="addbtn" Content="Add Employee" Click="btnAdd_Click" Width="95" Height="25" Margin="10,0,0,0"/>
+                            <Button x:Name="updatebtn" Content="Update" Click="updtbtn_Click" Width="95" Height="25" Margin="10,0,0,0"/>
+                            <Button x:Name="deletebtn" Content="Delete" Click="btndlt_Click" Width="95" Height="25" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </sdk:TabItem>
+                <sdk:TabItem Header="Attendance details" Height="35">
+
+                    <Grid ScrollViewer.VerticalScrollBarVisibility="Visible">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Vertical" Grid.Row="0">
+                            <!--<sdk:Label Content="Attendance"></sdk:Label>-->
+                            <sdk:DatePicker Name="attdatepicker"  SelectedDate="{Binding Path=MyDateTime,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                        Width="110" HorizontalAlignment="Left" Margin="10,10,0,0" Height="31" Text="Select A Date" ></sdk:DatePicker>
+
+                            <sdk:DataGrid Name="attendancegrid"  ItemsSource="{Binding List,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  RowBackground="Beige" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False"  
+                   SelectionMode="Single" CanUserSortColumns="True" CanUserReorderColumns="False" CanUserResizeColumns="False">
+
+                                <sdk:DataGrid.Columns>
+                                    <sdk:DataGridTextColumn Header="Employee Id" Width="2*" Binding="{Binding EmpID}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Employee Name" Width="3*" Binding="{Binding Name}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Punchin Time" Width="3.5*" Binding="{Binding PunchinTime}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Punchout Time" Width="3.5*" Binding="{Binding PunchoutTime}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Working hours" Width="3*" Binding="{Binding Duration}" IsReadOnly="True"></sdk:DataGridTextColumn>
+
+                                </sdk:DataGrid.Columns>
+
+                            </sdk:DataGrid>
+                            <sdk:Label Content="{Binding Err_msg,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="150" 
+                           HorizontalAlignment="Left" Margin="20,5,0,0"></sdk:Label>
+                            <Button Name="exportbtn" Content="Export"  Width="50" HorizontalAlignment="Right" Margin="0,0,100,0" Click="exportbtn_Click"></Button>
+
+                        </StackPanel>
+
+                        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,30,0,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text ="Employee Name : " FontWeight="SemiBold" Margin="30,5,0,0"></TextBlock>
+                                <ComboBox Name="namecombobx" Width="100" Height="24"     
+                                          ItemsSource="{Binding lst,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                          DisplayMemberPath="Name"
+                                          SelectedValuePath="EmpID"
+                          SelectedValue="{Binding IdSelected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                <Button Name="refresh_btn" Content="Refresh" Click="refresh_btn_Click" Width="50" Height="30" Margin="100,0,0,0"></Button>
+
+
+                            </StackPanel>
+
+                            <sdk:DataGrid Name="empdetailsgrid"  ItemsSource="{Binding EmpDetailsList,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  RowBackground="Beige" AlternatingRowBackground="AliceBlue" AutoGenerateColumns="False"  
+                   SelectionMode="Single" CanUserSortColumns="True" Margin="0,16,0,0" >
+
+                                <sdk:DataGrid.Columns>
+
+                                    <sdk:DataGridTextColumn Header="Date" Width="3*" Binding="{Binding CurrentDate}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Punchin Time" Width="5*" Binding="{Binding PunchinTime}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Punchout Time" Width="5*" Binding="{Binding PunchoutTime}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                    <sdk:DataGridTextColumn Header="Working Hours" Width="5*" Binding="{Binding Duration}" IsReadOnly="True"></sdk:DataGridTextColumn>
+
+                                </sdk:DataGrid.Columns>
+
+                            </sdk:DataGrid>
+                            <TextBlock Text="{Binding EmpPunchErrMsg,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Foreground="Red" Width="auto" Height="20" HorizontalAlignment="Left"></TextBlock>
+
+                        </StackPanel>
+                    </Grid>
+                </sdk:TabItem>
+                <sdk:TabItem Header="Leaves" Height="35" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="auto"/>
+                            <!--<RowDefinition Height="40"/>-->
+                            <!--<RowDefinition Height="30"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>-->
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>
+                        <sdk:TabControl Grid.Row="1" TabStripPlacement="Left">
+                            <sdk:TabItem Header="Pending Leaves" Height="35" >
+                                <StackPanel Orientation="Vertical">
+                                    <Image Name="refresh_btn_PendLvs" Source="../Icons/refresh.png" MouseLeftButtonDown="refresh_btn_PendLvs_MouseLeftButtonDown"
+                                           ToolTipService.ToolTip="Refresh" Width="50" Height="30" Margin="400,0,0,0"></Image>
+
+                                    <sdk:DataGrid Name="empleavedatgridpend" ItemsSource="{Binding LeaveDetailsListPending,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="1"
+                               CanUserReorderColumns="False" AutoGenerateColumns="False">
+                                    <sdk:DataGrid.Columns>
+                                        <sdk:DataGridTextColumn Header="Emp Id" Width="7*" Binding="{Binding EmpId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="From Date" Width="20*" Binding="{Binding FromDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="To Date" Width="20*" Binding="{Binding ToDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="Leave Type" Width="15*" Binding="{Binding LeaveType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTemplateColumn Header="Review" Width="10*" IsReadOnly="True">
+                                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Button Name="apprvbtn" Height="30" Click="apprvbtn_Click" >
+                                                            <Image Source="/HRMSWEBAP;component/Icons/approved.png" Height="20"></Image>
+                                                            <ToolTipService.ToolTip>
+                                                                <TextBlock Text="Approve"></TextBlock>
+                                                            </ToolTipService.ToolTip>
+                                                        </Button>
+                                                        
+                                                        <Button Name="rejectvbtn" Height="30" Click="rejectvbtn_Click" Margin="10,0,0,0">
+                                                            <Image Source="/HRMSWEBAP;component/Icons/rejected.png" Height="20"></Image>
+                                                            <ToolTipService.ToolTip>
+                                                                <TextBlock Text="Reject"></TextBlock>
+                                                            </ToolTipService.ToolTip>
+                                                        </Button>
+                                                        <!--<HyperlinkButton Name="reviewbtn" Content="View" Click="reviewbtn_Click" 
+                                                                         VerticalAlignment="Center" Margin="10,0,0,0"></HyperlinkButton>-->
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </sdk:DataGridTemplateColumn.CellTemplate>
+                                        </sdk:DataGridTemplateColumn>
+                                    </sdk:DataGrid.Columns>
+                                </sdk:DataGrid>
+                                <sdk:Label x:Name="errmsg_pendleaves" Foreground="Red" Visibility="Visible"></sdk:Label>
+                                </StackPanel>
+                            </sdk:TabItem>
+                            <sdk:TabItem Header="Approved Leaves" Height="35" >
+                                <StackPanel Orientation="Vertical">
+                                    <Image Name="refresh_btn_ApprLvs" Source="../Icons/refresh.png" MouseLeftButtonDown="refresh_btn_ApprLvs_MouseLeftButtonDown" Width="50" Height="30" Margin="400,0,0,0" ToolTipService.ToolTip="Refresh"></Image>
+
+                                    <sdk:DataGrid Name="empleavedatgridappov" ItemsSource="{Binding LeaveDetailsListApprov,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="4"
+                               CanUserReorderColumns="False" AutoGenerateColumns="False">
+                                    <sdk:DataGrid.Columns>
+                                        <sdk:DataGridTextColumn Header="Emp Id" Width="7*" Binding="{Binding EmpId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="From Date" Width="20*" Binding="{Binding FromDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="To Date" Width="20*" Binding="{Binding ToDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="Leave Type" Width="15*" Binding="{Binding LeaveType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+
+                                    </sdk:DataGrid.Columns>
+                                </sdk:DataGrid>
+                                <sdk:Label x:Name="errmsg_apprvdleaves" Foreground="Red" ></sdk:Label>
+                                </StackPanel>
+
+                            </sdk:TabItem>
+                            <sdk:TabItem Header="Rejected Leaves" Height="35">
+                                <StackPanel Orientation="Vertical">
+                                    <Image Name="refresh_btn_RjcLvs" Source="../Icons/refresh.png" MouseLeftButtonDown="refresh_btn_RjcLvs_MouseLeftButtonDown"
+                                           Width="50" Height="30" Margin="400,0,0,0" ToolTipService.ToolTip="Refresh"></Image>
+
+                                    <sdk:DataGrid Name="empleavedatgridrejec" ItemsSource="{Binding LeaveDetailsListRejec,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.Row="4"
+                              CanUserReorderColumns="False" AutoGenerateColumns="False">
+                                    <sdk:DataGrid.Columns>
+                                        <sdk:DataGridTextColumn Header="Emp Id" Width="7*" Binding="{Binding EmpId,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="From Date" Width="20*" Binding="{Binding FromDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="To Date" Width="20*" Binding="{Binding ToDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTextColumn Header="Leave Type" Width="15*" Binding="{Binding LeaveType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></sdk:DataGridTextColumn>
+                                        <sdk:DataGridTemplateColumn Header="Comments" Width="15*">
+                                            <sdk:DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <TextBlock Name="CommentsBlk" Text="{Binding Path=Comments,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+                                                </DataTemplate>
+                                            </sdk:DataGridTemplateColumn.CellTemplate>
+                                        </sdk:DataGridTemplateColumn>
+                                    </sdk:DataGrid.Columns>
+                                </sdk:DataGrid>
+                                    <sdk:Label x:Name="errmsg_rejecleaves" Foreground="Red" ></sdk:Label>
+                                </StackPanel>
+                            </sdk:TabItem>
+                        </sdk:TabControl>
+                    </Grid>
+
+                </sdk:TabItem>
+            </sdk:TabControl>
+
+        </ScrollViewer>
+    </Grid>
+</navigation:Page>

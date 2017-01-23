@@ -1,0 +1,26 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IHrmsService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+            <customBinding>
+                <binding name="CustomBinding_MailService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="../MailService.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_MailService" contract="MailReference.MailService"
+                name="CustomBinding_MailService" />
+            <endpoint address="http://localhost:51532/HrmsService.svc" binding="basicHttpBinding"
+                bindingConfiguration="BasicHttpBinding_IHrmsService" contract="HrmsReference.IHrmsService"
+                name="BasicHttpBinding_IHrmsService" />
+        </client>
+    </system.serviceModel>
+</configuration>

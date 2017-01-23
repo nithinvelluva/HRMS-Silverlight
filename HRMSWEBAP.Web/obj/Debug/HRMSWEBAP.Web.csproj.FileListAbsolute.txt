@@ -1,0 +1,11 @@
+C:\Users\nithin\Documents\Visual Studio 2013\Projects\HRMSWEBAP\HRMSWEBAP.Web\bin\HRMSWEBAP.Web.dll.config
+C:\Users\nithin\Documents\Visual Studio 2013\Projects\HRMSWEBAP\HRMSWEBAP.Web\bin\HRMSWEBAP.Web.dll
+C:\Users\nithin\Documents\Visual Studio 2013\Projects\HRMSWEBAP\HRMSWEBAP.Web\bin\HRMSWEBAP.Web.pdb
+C:\Users\nithin\Documents\Visual Studio 2013\Projects\HRMSWEBAP\HRMSWEBAP.Web\obj\Debug\HRMSWEBAP.Web.dll
+C:\Users\nithin\Documents\Visual Studio 2013\Projects\HRMSWEBAP\HRMSWEBAP.Web\obj\Debug\HRMSWEBAP.Web.pdb
+C:\Users\nithin\Documents\Visual Studio 2013\Projects\HRMSWEBAP\HRMSWEBAP.Web\obj\Debug\HRMSWEBAP.Web.csprojResolveAssemblyReference.cache
+F:\Projects\HRMS\HRMSWEBAP\HRMSWEBAP.Web\bin\HRMSWEBAP.Web.dll.config
+F:\Projects\HRMS\HRMSWEBAP\HRMSWEBAP.Web\bin\HRMSWEBAP.Web.dll
+F:\Projects\HRMS\HRMSWEBAP\HRMSWEBAP.Web\bin\HRMSWEBAP.Web.pdb
+F:\Projects\HRMS\HRMSWEBAP\HRMSWEBAP.Web\obj\Debug\HRMSWEBAP.Web.dll
+F:\Projects\HRMS\HRMSWEBAP\HRMSWEBAP.Web\obj\Debug\HRMSWEBAP.Web.pdb

@@ -1,0 +1,31 @@
+﻿<navigation:Page x:Class="HRMSWEBAP.Views.AdminPageNew" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="AdminPageNew Page">
+    <Grid x:Name="LayoutRoot">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <ListBox>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="Users" Width="100" Background="Transparent" BorderThickness="0"></Button>
+                    <Button Content="Leave" Width="100" Background="Transparent" BorderThickness="0"></Button>
+                    <Button Content="Attendance" Width="100" Background="Transparent" BorderThickness="0"></Button>
+                </StackPanel>
+            </ListBox>
+        </Grid>
+    </Grid>
+</navigation:Page>

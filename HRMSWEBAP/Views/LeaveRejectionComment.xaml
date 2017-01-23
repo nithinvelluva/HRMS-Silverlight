@@ -1,0 +1,63 @@
+﻿<controls:ChildWindow x:Class="HRMSWEBAP.Views.LeaveRejectionComment"
+                      xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="270" Height="320"            >
+    <controls:ChildWindow.Title>
+        <StackPanel Orientation="Horizontal" Height="30">
+           
+            <TextBlock Text="HRMS - Leave Details" VerticalAlignment="Center" Margin="5,0,0,0" FontSize="14"></TextBlock>
+        </StackPanel>
+    </controls:ChildWindow.Title>
+    <Grid x:Name="LayoutRoot" Margin="2">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="From Date" Height="20" Width="75" VerticalAlignment="Top"></TextBlock>
+                <!--<TextBlock Name="fromdateblk" Height="20" VerticalAlignment="Top" Margin="10,0,0,0" Width="auto"></TextBlock>-->
+                <sdk:DatePicker Name="FromDatePicker" Height="30" VerticalAlignment="Top" Margin="20,0,0,0" Width="150" IsHitTestVisible="False"></sdk:DatePicker>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="To Date" Height="20" Width="75" VerticalAlignment="Top" ></TextBlock>
+                <!--<TextBlock Name="todateblk" Height="20" VerticalAlignment="Top" Margin="10,0,0,0" Width="auto"></TextBlock>-->
+                <sdk:DatePicker Name="ToDatePicker" Height="30" VerticalAlignment="Top" Margin="20,0,0,0" Width="150" IsHitTestVisible="False"></sdk:DatePicker>
+            </StackPanel>
+          
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                <TextBlock Text="Leave Status" Height="20" Width="75" VerticalAlignment="Top" ></TextBlock>
+                <TextBlock Name="lvstatusblk" Height="20" VerticalAlignment="Top" Margin="10,0,0,0" Width="auto"></TextBlock>
+                <CheckBox Name="lv_cancel_chkBx" IsHitTestVisible="False" IsChecked="{Binding CancelChangeFlag,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="10,0,0,0">Cancel</CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" >
+                <TextBlock Text="LeaveType" Height="20" Width="75" VerticalAlignment="Top"></TextBlock>
+                <!--<TextBlock Name="lvtypblk" Height="20" VerticalAlignment="Top" Margin="10,0,0,0" Width="auto"></TextBlock>-->
+                <ComboBox Name="lvdurTypComboBx" Height="30" VerticalAlignment="Top" Margin="20,0,0,0" Width="150" IsHitTestVisible="False"
+                          ItemsSource="{Binding LvDurTypList,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                                          DisplayMemberPath="Leavedurationtype"
+                                          SelectedValuePath="LeavedurTypInt" 
+                          SelectedValue="{Binding LvDurTypSel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></ComboBox>
+            </StackPanel>
+            <TextBlock Text="Commnets" Height="20" VerticalAlignment="Top" Margin="0,5,0,0"></TextBlock>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <TextBox Name="cmntblk" Height="70" TextWrapping="Wrap" IsEnabled="{Binding EditStatus}"></TextBox>
+            </ScrollViewer>
+
+        </StackPanel>
+        <StackPanel Grid.Row="1" Name="userstackpnl">
+            <Button x:Name="Addcmntsbtn" Content="Edit" Click="Addcmntsbtn_Click" Width="90" Height="23" HorizontalAlignment="Center"  Grid.Row="1" />
+            <Button x:Name="cntctadminbtn" Content="Contact Admin" Click="cntctadminbtn_Click" Visibility="Collapsed" Width="90" Height="23" HorizontalAlignment="Center"  Grid.Row="1" />
+            <Button x:Name="Update" Content="Update" Click="Update_Click" Width="90" Height="23" Visibility="Collapsed" HorizontalAlignment="Center" Grid.Row="1" />
+        </StackPanel>
+
+        <!--<StackPanel Grid.Row="1" Name="adminstackpnl">
+            <Button x:Name="Approve" Content="Add Comments" Click="Addcmntsbtn_Click" Width="90" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+            <Button x:Name="Reject" Content="Update" Click="Update_Click" Width="90" Height="23" HorizontalAlignment="Right" Margin="0,12,79,0" Grid.Row="1" />
+        </StackPanel>-->
+
+    </Grid>
+</controls:ChildWindow>
